@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>デバッグ用 設定ショートカット</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>デバッグ用 設定アプリ起動</h2>
+
+    <!-- パターン1: 設定アプリのAction指定 -->
+    <a href="intent:#Intent;action=android.settings.SETTINGS;end" class="btn">
+        設定アプリを開く (SETTINGS)
+    </a>
+
+    <!-- パターン2: 開発者向けオプションを直接開く -->
+    <a href="intent:#Intent;action=android.settings.APPLICATION_DEVELOPMENT_SETTINGS;end" class="btn">
+        開発者向けオプションを開く
+    </a>
+
+    <!-- パターン3: コンポーネントを直接指定（Google標準機向け） -->
+    <a href="intent:#Intent;component=com.android.settings/.Settings;end" class="btn">
+        設定アプリを開く (Component指定)
+    </a>
+
+</body>
+</html>
