@@ -21,7 +21,7 @@
 </head>
 <body>
 
-    <h2>デバッグ用 設定アプリ起動</h2>
+    <h2>設定アプリ起動</h2>
 
     <!-- パターン1: 設定アプリのAction指定 -->
     <a href="intent:#Intent;action=android.settings.SETTINGS;end" class="btn">
@@ -38,5 +38,72 @@
         設定アプリを開く (Component指定)
     </a>
 
+    <h2>オプションを直接起動</h2>
+    
+    <!-- 1. 開発者向けオプション（直接起動） -->
+    <a href="intent:#Intent;action=android.settings.APPLICATION_DEVELOPMENT_SETTINGS;end">
+        1. 開発者向けオプション (USBデバッグをオンにする)
+    </a>
+
+    <!-- 2. Chrome/ブラウザのダウンロード画面（APKインストール誘導） -->
+    <a href="intent:#Intent;action=android.intent.action.VIEW_DOWNLOADS;end">
+        2. ダウンロード一覧を開く
+    </a>
+
+    <!-- 3. ファイルマネージャー / ストレージ管理 -->
+    <a href="intent:#Intent;action=android.os.storage.action.MANAGE_STORAGE;end">
+        3. ストレージ管理を開く
+    </a>
+
+    <!-- 4. Google Play開発者サービス（アカウント設定回避） -->
+    <a href="intent:#Intent;action=android.settings.ACCOUNT_SYNC_SETTINGS;end">
+        4. アカウント同期設定を開く
+    </a>
+
+    <!-- 5. Wi-Fi設定画面（接続設定を迂回） -->
+    <a href="intent:#Intent;action=android.settings.WIFI_SETTINGS;end">
+        5. Wi-Fi設定を開く
+    </a>
+    <!-- 1. アプリ一覧・権限管理画面（特定のアプリから設定へ逃げる） -->
+    
+    <a href="intent:#Intent;action=android.settings.MANAGE_ALL_APPLICATIONS_SETTINGS;end" class="btn">
+        全アプリ一覧を開く
+    </a>
+
+    <!-- 2. アクセシビリティ（ユーザー補助）設定 -->
+    <!-- ※ここが開ければTalkBackやスイッチアクセスを無理やりONにして抜け出せるぞ？ -->
+    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;end" class="btn">
+        アクセシビリティ（ユーザー補助）を開く
+    </a>
+
+    <!-- 3. 日付と時刻の設定 -->
+    <a href="intent:#Intent;action=android.settings.DATE_SETTINGS;end" class="btn">
+        日付と時刻の設定を開く
+    </a>
+
+    <!-- 4. ディスプレイ・画面設定 -->
+    <a href="intent:#Intent;action=android.settings.DISPLAY_SETTINGS;end" class="btn">
+        ディスプレイ設定を開く
+    </a>
+
+    <!-- 5. 音声・サウンド設定 -->
+    <a href="intent:#Intent;action=android.settings.SOUND_SETTINGS;end" class="btn">
+        サウンド設定を開く
+    </a>
+
+    <!-- 6. 言語と入力設定 -->
+    <a href="intent:#Intent;action=android.settings.LOCALE_SETTINGS;end" class="btn">
+        言語設定を開く
+    </a>
+
+    <!-- 7. 標準のブラウザ・検索（Googleアプリの直接呼び出し） -->
+    <a href="intent:#Intent;action=android.intent.action.WEB_SEARCH;end" class="btn">
+        Web検索を開く
+    </a>
+
+    <!-- 8. Android標準パッケージマネージャー（ファイル選択ダイアログ） -->
+    <a href="intent:#Intent;action=android.intent.action.OPEN_DOCUMENT;type=*/*;end" class="btn">
+        ファイル選択（ストレージ）を開く
+    </a>
 </body>
 </html>
